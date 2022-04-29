@@ -22,8 +22,12 @@ export const StyledLinks = styled.div`
   }
 `;
 
-export const StyledLink = styled(animated.div)`
+export const StyledLink = styled(animated.a)`
   color: ${({ theme }) => theme.white};
   font-size: 1.5em;
   font-weight: lighter;
+  text-decoration: none;
+  :hover {
+    color: ${({ theme }) => theme.selected};
+  }
 `;
