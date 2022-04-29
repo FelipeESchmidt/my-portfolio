@@ -7,6 +7,7 @@ export const StyledContainer = styled.div`
   row-gap: 10px;
   margin-top: 30vh;
   margin-left: 20%;
+  height: 20vh;
 `;
 
 const text = css`
@@ -29,4 +30,15 @@ export const StyledDescription = styled(animated.p)`
   font-size: 18px;
   letter-spacing: 1px;
   ${text};
+`;
+
+export const StyledSocials = styled.div`
+  display: flex;
+  column-gap: 1em;
+  margin-top: 1em;
+`;
+
+export const Social = styled(animated.a)`
+  font-size: 25px;
+  color: ${({ theme }) => theme.white};
 `;
