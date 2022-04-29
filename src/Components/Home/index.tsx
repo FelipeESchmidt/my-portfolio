@@ -6,14 +6,14 @@ import MainInfo from '../MainInfo';
 
 import * as S from './index.styles';
 
-function Major() {
+function Home() {
   return (
     <>
-      <S.StyledMajor id={links[0].toLocaleLowerCase()} />
+      <S.StyledHome id={links[0].toLocaleLowerCase()} />
       <Header />
       <MainInfo />
     </>
   );
 }
 
-export default Major;
+export default Home;
