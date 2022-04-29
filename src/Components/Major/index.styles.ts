@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-const background = require('./assets/background.png');
+import background from './assets/background.png';
 
 export const StyledMajor = styled.div`
   position: absolute;
@@ -8,5 +8,7 @@ export const StyledMajor = styled.div`
   background-image: url(${background});
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  filter: brightness(50%);
   z-index: -1;
 `;
