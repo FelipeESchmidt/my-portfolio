@@ -6,6 +6,9 @@ import { media768px } from '../../Styles/CommomStyles';
 
 export const StyledHeader = styled.div`
   padding: 10px 0;
+  ${media768px} {
+    padding: 0;
+  }
 `;
 
 export const StyledWrapper = styled.div<{ open: boolean }>`

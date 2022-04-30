@@ -1,13 +1,23 @@
 import { animated } from 'react-spring';
 import styled, { css } from 'styled-components';
+import { media768px } from '../../Styles/CommomStyles';
 
 export const StyledContainer = styled.div`
+  position: relative;
+  top: -52px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   row-gap: 10px;
-  margin-top: 30vh;
-  margin-left: 20%;
-  height: 20vh;
+  margin-left: 18%;
+  ${media768px} {
+    top: 0;
+    margin: 0 5%;
+  }
 `;
 
 const text = css`
@@ -22,6 +32,9 @@ export const StyledName = styled.h1`
   ${text};
   :after {
     display: none;
+  }
+  ${media768px} {
+    font-size: 32px;
   }
 `;
 

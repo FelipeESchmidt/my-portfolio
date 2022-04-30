@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media768px } from '../../Styles/CommomStyles';
 import background from './assets/background.png';
 
 export const StyledHome = styled.div`
@@ -11,4 +12,7 @@ export const StyledHome = styled.div`
   background-attachment: fixed;
   filter: brightness(50%);
   z-index: -1;
+  ${media768px} {
+    filter: brightness(80%);
+  }
 `;
