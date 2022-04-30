@@ -33,16 +33,16 @@ function Example({ n }: any) {
         }}
       />
 
-      <ParallaxLayer offset={1.8} speed={1} style={{ pointerEvents: 'none' }}>
-        <img src={light} alt="" style={{ width: '15%', marginLeft: '80%' }} />
+      <ParallaxLayer offset={1.8} speed={1} style={{ pointerEvents: 'none', zIndex: -5 }}>
+        <img src={light} alt="" style={{ width: '100px', marginLeft: '80%' }} />
       </ParallaxLayer>
 
       <ParallaxLayer offset={1.1} speed={-2.5} style={{ pointerEvents: 'none', zIndex: -5 }}>
-        <img src={light} alt="" style={{ width: '7%', marginLeft: '78%', opacity: 0.5 }} />
+        <img src={light} alt="" style={{ width: '50px', marginLeft: '78%', opacity: 0.5 }} />
       </ParallaxLayer>
 
-      <ParallaxLayer offset={1.9} speed={0.8} style={{ pointerEvents: 'none' }}>
-        <img src={light} alt="" style={{ width: '5%', marginLeft: '92%', opacity: 0.4 }} />
+      <ParallaxLayer offset={1.9} speed={0.8} style={{ pointerEvents: 'none', zIndex: -5 }}>
+        <img src={light} alt="" style={{ width: '65px', marginLeft: '92%', opacity: 0.4 }} />
       </ParallaxLayer>
 
       <ParallaxLayer offset={3} speed={0.8} style={{ opacity: 0.1, pointerEvents: 'none' }}>

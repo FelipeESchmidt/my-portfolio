@@ -4,18 +4,13 @@ import { media768px } from '../../Styles/CommomStyles';
 
 export const StyledContainer = styled.div`
   position: relative;
-  top: -52px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
+  height: calc(100% - 52px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   row-gap: 10px;
   margin-left: 18%;
   ${media768px} {
-    top: 0;
     margin: 0 5%;
   }
 `;

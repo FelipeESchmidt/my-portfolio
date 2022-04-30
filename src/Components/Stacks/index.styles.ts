@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media768px } from '../../Styles/CommomStyles';
 
 export const StyledStacks = styled.div`
   display: flex;
@@ -9,15 +10,23 @@ export const StyledStacks = styled.div`
   row-gap: 2em;
   margin-left: 20%;
   margin-top: 44.5vh;
+  ${media768px} {
+    margin-left: 5%;
+    width: 90%;
+  }
 `;
 
 export const StyledStack = styled.div`
   width: 40%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 1px ${({ theme }) => theme.red};
+  ${media768px} {
+    padding: 2%;
+  }
 `;
 
 export const StyledStackName = styled.h3`
