@@ -13,7 +13,12 @@ function Example({ n }: any) {
   const { parallax } = useContext(ParallaxContext);
   return (
     <>
-      <ParallaxLayer offset={3} factor={2} speed={1} style={{ backgroundColor: '#CCCC' }} />
+      <ParallaxLayer
+        offset={3}
+        factor={2}
+        speed={1}
+        style={{ backgroundColor: '#CCCC', zIndex: -1 }}
+      />
       <ParallaxLayer offset={n + 2} speed={1} style={{ backgroundColor: '#805E73' }} />
       <ParallaxLayer offset={n + 3} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
@@ -24,6 +29,7 @@ function Example({ n }: any) {
         style={{
           backgroundImage: url('stars', true),
           backgroundSize: 'cover',
+          zIndex: -1,
         }}
       />
 
