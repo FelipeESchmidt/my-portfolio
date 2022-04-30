@@ -6,6 +6,6 @@ import { links } from './index.constants';
 test('should render Title', () => {
   render(<Header />);
 
-  const textElement = screen.queryByText(links[0]);
+  const textElement = screen.queryByText(links[0].name);
   expect(textElement).toBeInTheDocument();
 });

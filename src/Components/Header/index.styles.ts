@@ -27,6 +27,7 @@ export const StyledLink = styled(animated.a)`
   font-size: 1.5em;
   font-weight: lighter;
   text-decoration: none;
+  cursor: pointer;
   :hover {
     color: ${({ theme }) => theme.selected};
   }

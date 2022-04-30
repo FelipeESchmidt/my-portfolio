@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Spring } from 'react-spring';
+import ParallaxContext from '../../Contexts/ParallaxContext';
 import { Container } from '../../Styles/CommomStyles';
 import { links } from './index.constants';
 import * as S from './index.styles';
 
 function Header() {
+  const { parallax } = useContext(ParallaxContext);
+
+  const handleClick = (i: number) => parallax?.current.scrollTo(i);
+
   return (
     <S.StyledHeader>
       <Container>
@@ -19,8 +24,11 @@ function Header() {
                 to={[{ opacity: 1 }]}
               >
                 {(styles: any) => (
-                  <S.StyledLink href={`#${link.toLowerCase()}`} style={{ ...styles }}>
-                    {link}
+                  <S.StyledLink
+                    onClick={() => handleClick(link.parallaxIndex)}
+                    style={{ ...styles }}
+                  >
+                    {link.name}
                   </S.StyledLink>
                 )}
               </Spring>
