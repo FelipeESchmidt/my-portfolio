@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -11,12 +11,8 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #0f1113;
   }
-`;
-
-export const WholePage = styled.div`
-  min-height: 100vh;
-  background-color: ${({ theme }) => theme.lightGray};
 `;
 
 export default GlobalStyle;
