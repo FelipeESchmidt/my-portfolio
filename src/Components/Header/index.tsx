@@ -1,19 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Spring } from 'react-spring';
 import ParallaxContext from '../../Contexts/ParallaxContext';
-import { Container } from '../../Styles/CommomStyles';
+import { breakpoint, Container } from '../../Styles/CommomStyles';
 import { links } from './index.constants';
 import * as S from './index.styles';
 
 function Header() {
   const { parallax } = useContext(ParallaxContext);
 
-  const handleClick = (i: number) => parallax?.current.scrollTo(i);
+  const [isResponsive, setIsResponsive] = useState(window.innerWidth <= breakpoint);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleResize = () => setIsResponsive(window.innerWidth <= breakpoint);
+
+  const handleLinkClick = (i: number) => {
+    parallax?.current.scrollTo(i);
+    setMenuOpen(false);
+  };
+
+  const handleIconClick = () => setMenuOpen(!menuOpen);
+
+  const renderIcon = () =>
+    menuOpen ? (
+      <S.StyledCloseMenuIcon onClick={handleIconClick} />
+    ) : (
+      <S.StyledOpenMenuIcon onClick={handleIconClick} />
+    );
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <S.StyledHeader>
       <Container>
-        <S.StyledWrapper>
+        {isResponsive && renderIcon()}
+        <S.StyledWrapper open={menuOpen}>
           <S.StyledLinks>
             {links.map((link, i) => (
               <Spring
@@ -25,7 +49,7 @@ function Header() {
               >
                 {(styles: any) => (
                   <S.StyledLink
-                    onClick={() => handleClick(link.parallaxIndex)}
+                    onClick={() => handleLinkClick(link.parallaxIndex)}
                     style={{ ...styles }}
                   >
                     {link.name}
