@@ -75,7 +75,7 @@ export const StyledProjectMinor = styled.div<{ background: string; left: boolean
     background: none;
     box-shadow: none;
     filter: none;
-    border: 1px solid ${({ theme }) => theme.white};
+    border: 1px solid ${({ theme }) => theme.black};
     background-color: ${({ theme }) => `${theme.white}33`};
     box-sizing: border-box;
     ${responsiveSvgInsideProject};
@@ -94,6 +94,9 @@ export const StyledProjectMain = styled.div<{ background: string }>`
   ${media768px} {
     width: 100%;
     padding-bottom: calc(9 / 16 * 100%);
+    :hover {
+      transform: none;
+    }
   }
 `;
 
@@ -118,7 +121,7 @@ export const StyledMainButtonWrapper = styled.div<{ left: boolean }>`
     opacity: 1;
     bottom: -50px;
     height: 50px;
-    border: 1px solid ${({ theme }) => theme.white};
+    border: 1px solid ${({ theme }) => theme.black};
     background-color: ${({ theme }) => `${theme.white}33`};
     box-sizing: border-box;
     ${responsiveSvgInsideProject};
