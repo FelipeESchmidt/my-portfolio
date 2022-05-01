@@ -1,17 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Spring } from 'react-spring';
 import ParallaxContext from '../../Contexts/ParallaxContext';
-import { breakpoint, Container } from '../../Styles/CommomStyles';
+import { useResponsive } from '../../Hooks/useResponsive';
+import { Container } from '../../Styles/CommomStyles';
 import { links } from './index.constants';
 import * as S from './index.styles';
 
 function Header() {
   const { parallax } = useContext(ParallaxContext);
 
-  const [isResponsive, setIsResponsive] = useState(window.innerWidth <= breakpoint);
+  const isResponsive = useResponsive();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleResize = () => setIsResponsive(window.innerWidth <= breakpoint);
 
   const handleLinkClick = (i: number) => {
     parallax?.current.scrollTo(i);
@@ -26,12 +25,6 @@ function Header() {
     ) : (
       <S.StyledOpenMenuIcon onClick={handleIconClick} />
     );
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <S.StyledHeader>

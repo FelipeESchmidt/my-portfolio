@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { media768px } from '../../Styles/CommomStyles';
 
 export const StyledProjects = styled.div`
   display: flex;
@@ -8,6 +9,11 @@ export const StyledProjects = styled.div`
   justify-content: center;
   justify-content: space-between;
   margin-left: 5%;
+  ${media768px} {
+    position: relative;
+    width: auto;
+    margin: 0 2%;
+  }
 `;
 
 const basicProject = css`
@@ -32,6 +38,13 @@ const svgInsideProject = css`
   }
 `;
 
+const responsiveSvgInsideProject = css`
+  > svg {
+    font-size: 40px;
+    color: ${({ theme }) => theme.white};
+  }
+`;
+
 const minorOnHover = css`
   :hover {
     filter: brightness(90%);
@@ -44,7 +57,7 @@ const mainOnHover = css`
   }
 `;
 
-export const StyledProjectMinor = styled.div<{ background: string }>`
+export const StyledProjectMinor = styled.div<{ background: string; left: boolean }>`
   position: relative;
   width: 20%;
   padding-bottom: calc(9 / 16 * 20%);
@@ -53,6 +66,20 @@ export const StyledProjectMinor = styled.div<{ background: string }>`
   ${basicProject};
   ${svgInsideProject};
   ${minorOnHover};
+  ${media768px} {
+    position: absolute;
+    ${({ left }) => (left ? 'left: 0' : 'right: 0')};
+    top: -50px;
+    width: 50%;
+    padding-bottom: 50px;
+    background: none;
+    box-shadow: none;
+    filter: none;
+    border: 1px solid ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => `${theme.white}33`};
+    box-sizing: border-box;
+    ${responsiveSvgInsideProject};
+  }
 `;
 
 export const StyledProjectMain = styled.div<{ background: string }>`
@@ -61,41 +88,39 @@ export const StyledProjectMain = styled.div<{ background: string }>`
   padding-bottom: calc(9 / 16 * 50%);
   background: ${({ background }) => `url(${background})`};
   background-repeat: repeat-y;
+  z-index: 10;
   ${basicProject};
   ${mainOnHover};
-`;
-
-export const StyledStackName = styled.h3`
-  color: ${({ theme }) => theme.white};
-  text-align: center;
-  letter-spacing: 1px;
-`;
-
-export const StyledGoodAt = styled.div<{ number: number }>`
-  span {
-    position: relative;
-    display: inline-block;
+  ${media768px} {
     width: 100%;
-    height: 12px;
-    margin: 8px 0;
-    text-align: center;
-    background-color: ${({ theme }) => theme.lightGray};
-    border-radius: 5px;
-    :after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: inline-block;
-      width: ${({ number }) => `calc(${number}%)`};
-      margin-right: ${({ number }) => `calc(${100 - number}%)`};
-      height: 100%;
-      background-color: ${({ theme }) => theme.white};
-      border-radius: 5px;
-    }
+    padding-bottom: calc(9 / 16 * 100%);
   }
-  display: flex;
-  justify-content: space-between;
-  top: 5px;
-  position: relative;
+`;
+
+const svgInsideMajorProject = css`
+  ${svgInsideProject};
+  opacity: 0;
+  transition: 1s;
+`;
+
+export const StyledMainButtonWrapper = styled.div<{ left: boolean }>`
+  position: absolute;
+  width: 50%;
+  ${({ left }) => (left ? 'left: 0' : 'right: 0')};
+  height: 100%;
+  transition: 0.5s;
+  ${svgInsideMajorProject};
+  :hover {
+    opacity: 1;
+    background-color: #5555;
+  }
+  ${media768px} {
+    opacity: 1;
+    bottom: -50px;
+    height: 50px;
+    border: 1px solid ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => `${theme.white}33`};
+    box-sizing: border-box;
+    ${responsiveSvgInsideProject};
+  }
 `;

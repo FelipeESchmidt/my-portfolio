@@ -7,12 +7,13 @@ interface ProjectType {
   main: string;
   minor: string;
   link: string;
+  repo: string;
   name: string;
 }
 
 export const projects: Array<ProjectType> = [
-  { name: 'certificates', link: '#a', main: certificates, minor: certificates },
-  { name: 'portfolio', link: '#c', main: portfolio, minor: portfolio },
-  { name: 'blog', link: '#b', main: blog, minor: blog },
-  { name: 'library', link: '#c', main: library, minor: library },
+  { name: 'certificates', link: '#a', repo: '#j', main: certificates, minor: certificates },
+  { name: 'portfolio', link: '#b', repo: '#j', main: portfolio, minor: portfolio },
+  { name: 'blog', link: '#c', repo: '#j', main: blog, minor: blog },
+  { name: 'library', link: '#d', repo: '#j', main: library, minor: library },
 ];
