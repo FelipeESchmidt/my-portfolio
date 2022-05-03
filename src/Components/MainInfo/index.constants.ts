@@ -38,7 +38,7 @@ export const socials: Array<Social> = [
   },
   {
     name: 'email',
-    href: 'mailto:schmidtfe2@gmail.com?subject=Contact from website&body=Your message',
+    href: 'mailto:contact@felipeschmidt.me?subject=Contact from website&body=Your message',
     icon: FiMail,
   },
 ];
