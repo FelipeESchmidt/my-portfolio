@@ -49,4 +49,8 @@ export const StyledSocials = styled.div`
 export const Social = styled(animated.a)`
   font-size: 25px;
   color: ${({ theme }) => theme.white};
+  transition: 0.5s;
+  :hover {
+    color: ${({ theme }) => theme.selected};
+  }
 `;
