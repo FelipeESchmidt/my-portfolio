@@ -1,6 +1,7 @@
 import { IconType } from 'react-icons';
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs';
 import { FaSteam } from 'react-icons/fa';
+import { FiMail } from 'react-icons/fi';
 
 interface Social {
   name: string;
@@ -34,5 +35,10 @@ export const socials: Array<Social> = [
     name: 'steam',
     href: 'https://steamcommunity.com/id/TheJodes/',
     icon: FaSteam,
+  },
+  {
+    name: 'email',
+    href: 'mailto:schmidtfe2@gmail.com?subject=Contact from website&body=Your message',
+    icon: FiMail,
   },
 ];

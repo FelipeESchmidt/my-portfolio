@@ -39,9 +39,9 @@ function MainInfo() {
           <Spring
             key={social.name}
             delay={8000 + 400 * i}
-            config={{ duration: 650 }}
-            from={{ opacity: 0, marginTop: '-25px' }}
-            to={[{ opacity: 1, marginTop: '0' }]}
+            config={{ duration: 200 * (i + 1) }}
+            from={{ opacity: 0, display: 'none', transform: `translateY(-${5 * (i + 1)}px)` }}
+            to={{ opacity: 1, display: 'block', transform: 'translateY(0)' }}
           >
             {(styles: any) => (
               <S.Social style={{ ...styles }} href={social.href} target="_blank">
