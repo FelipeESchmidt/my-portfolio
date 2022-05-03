@@ -14,7 +14,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <ParallaxContext.Provider value={{ parallax }}>
-        <Parallax ref={parallax} pages={7}>
+        <Parallax ref={parallax} pages={4.3}>
           <ParallaxLayer offset={0} speed={0.2}>
             <Home />
           </ParallaxLayer>
