@@ -3,6 +3,7 @@ import { ParallaxLayer } from '@react-spring/parallax';
 import ParallaxContext from '../../Contexts/ParallaxContext';
 
 import light from './assets/light.png';
+import cloud from './assets/cloud.svg';
 
 const url = (name: string, wrap = false) =>
   `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
@@ -34,20 +35,28 @@ function Example({ n }: any) {
       />
 
       <ParallaxLayer offset={1.8} speed={1} style={{ pointerEvents: 'none', zIndex: -5 }}>
-        <img src={light} alt="" style={{ width: '100px', marginLeft: '80%' }} />
+        <img src={light} alt="" style={{ width: '12%', minWidth: '100px', marginLeft: '80%' }} />
       </ParallaxLayer>
 
       <ParallaxLayer offset={1.1} speed={-2.5} style={{ pointerEvents: 'none', zIndex: -5 }}>
-        <img src={light} alt="" style={{ width: '50px', marginLeft: '78%', opacity: 0.5 }} />
+        <img
+          src={light}
+          alt=""
+          style={{ width: '4%', minWidth: '65px', marginLeft: '78%', opacity: 0.3 }}
+        />
       </ParallaxLayer>
 
       <ParallaxLayer offset={1.9} speed={0.8} style={{ pointerEvents: 'none', zIndex: -5 }}>
-        <img src={light} alt="" style={{ width: '65px', marginLeft: '92%', opacity: 0.4 }} />
+        <img
+          src={light}
+          alt=""
+          style={{ width: '6%', minWidth: '50px', marginLeft: '92%', opacity: 0.4 }}
+        />
       </ParallaxLayer>
 
       <ParallaxLayer offset={3} speed={0.8} style={{ opacity: 0.1, pointerEvents: 'none' }}>
-        <img src={url('cloud')} alt="" style={{ width: '20%', marginLeft: '30%' }} />
-        <img src={url('cloud')} alt="" style={{ width: '10%', marginLeft: '15%' }} />
+        <img src={cloud} alt="" style={{ width: '20%', minWidth: '200px', marginLeft: '30%' }} />
+        <img src={cloud} alt="" style={{ width: '10%', minWidth: '100px', marginLeft: '15%' }} />
       </ParallaxLayer>
 
       <ParallaxLayer
@@ -55,8 +64,8 @@ function Example({ n }: any) {
         speed={0.2}
         style={{ opacity: 0.2, pointerEvents: 'none', zIndex: -2 }}
       >
-        <img src={url('cloud')} alt="" style={{ width: '10%', marginLeft: '10%' }} />
-        <img src={url('cloud')} alt="" style={{ width: '20%', marginLeft: '75%' }} />
+        <img src={cloud} alt="" style={{ width: '10%', minWidth: '100px', marginLeft: '10%' }} />
+        <img src={cloud} alt="" style={{ width: '20%', minWidth: '200px', marginLeft: '75%' }} />
       </ParallaxLayer>
 
       <ParallaxLayer
@@ -64,13 +73,13 @@ function Example({ n }: any) {
         speed={0.5}
         style={{ opacity: 0.1, pointerEvents: 'none', zIndex: -2 }}
       >
-        <img src={url('cloud')} alt="" style={{ width: '12%', marginLeft: '72%' }} />
-        <img src={url('cloud')} alt="" style={{ width: '20%', marginLeft: '5%' }} />
+        <img src={cloud} alt="" style={{ width: '12%', minWidth: '120px', marginLeft: '72%' }} />
+        <img src={cloud} alt="" style={{ width: '20%', minWidth: '200px', marginLeft: '5%' }} />
       </ParallaxLayer>
 
       <ParallaxLayer offset={4.2} speed={0.4} style={{ opacity: 0.5, pointerEvents: 'none' }}>
-        <img src={url('cloud')} alt="" style={{ width: '20%', marginLeft: '5%' }} />
-        <img src={url('cloud')} alt="" style={{ width: '15%', marginLeft: '75%' }} />
+        <img src={cloud} alt="" style={{ width: '20%', minWidth: '200px', marginLeft: '5%' }} />
+        <img src={cloud} alt="" style={{ width: '15%', minWidth: '150px', marginLeft: '75%' }} />
       </ParallaxLayer>
 
       <ParallaxLayer
