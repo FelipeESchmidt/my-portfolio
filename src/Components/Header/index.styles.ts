@@ -30,8 +30,8 @@ export const StyledWrapper = styled.div<{ open: boolean }>`
 
 export const StyledLinks = styled.div`
   display: flex;
-  width: 40%;
-  margin-left: 60%;
+  width: 50%;
+  margin-left: 50%;
   justify-content: space-between;
   ${media768px} {
     z-index: 11;
