@@ -8,13 +8,14 @@ import Stacks from '../../Components/Stacks';
 import ParallaxContext from '../../Contexts/ParallaxContext';
 import Details from '../../Components/Details/paralax.example';
 import Projects from '../../Components/Projects';
+import Lifetime, { LifetimeTop } from '../../Components/Lifetime';
 
 function App() {
   const parallax = React.useRef<IParallax>(null!);
   return (
     <ThemeProvider theme={theme}>
       <ParallaxContext.Provider value={{ parallax }}>
-        <Parallax ref={parallax} pages={4.3}>
+        <Parallax ref={parallax} pages={9}>
           <ParallaxLayer offset={0} speed={0.2}>
             <Home />
           </ParallaxLayer>
@@ -24,6 +25,10 @@ function App() {
           <ParallaxLayer offset={3.5} speed={0.2}>
             <Projects />
           </ParallaxLayer>
+          <ParallaxLayer sticky={{ start: 5, end: 9 }}>
+            <LifetimeTop />
+          </ParallaxLayer>
+          <Lifetime offsetStart={5.2} />
           <Details n={3} />
         </Parallax>
       </ParallaxContext.Provider>
