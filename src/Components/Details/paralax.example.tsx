@@ -20,8 +20,8 @@ function Example({ n }: any) {
         speed={1}
         style={{ backgroundColor: '#5555', zIndex: -2 }}
       />
-      <ParallaxLayer offset={n + 2} speed={1} style={{ backgroundColor: '#805E73' }} />
-      <ParallaxLayer offset={n + 3} speed={1} style={{ backgroundColor: '#87BCDE' }} />
+      {/* <ParallaxLayer offset={n + 2} speed={1} style={{ backgroundColor: '#805E73', zIndex: -2 }} />
+      <ParallaxLayer offset={n + 3} speed={1} style={{ backgroundColor: '#87BCDE', zIndex: -2 }} /> */}
 
       <ParallaxLayer
         offset={1}
@@ -81,7 +81,7 @@ function Example({ n }: any) {
         <img src={cloud} alt="" style={{ width: '20%', minWidth: '200px', marginLeft: '5%' }} />
         <img src={cloud} alt="" style={{ width: '15%', minWidth: '150px', marginLeft: '75%' }} />
       </ParallaxLayer>
-
+      {/* 
       <ParallaxLayer
         offset={n + 3.5}
         speed={-0.4}
@@ -93,9 +93,9 @@ function Example({ n }: any) {
         }}
       >
         <img src={url('earth')} style={{ width: '60%' }} />
-      </ParallaxLayer>
+      </ParallaxLayer> */}
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={n + 3}
         speed={-0.3}
         style={{
@@ -103,12 +103,11 @@ function Example({ n }: any) {
           backgroundPosition: 'center',
           backgroundImage: url('clients', true),
         }}
-      />
+      /> */}
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={n + 1}
         speed={0.1}
-        onClick={() => parallax?.current.scrollTo(1)}
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -116,12 +115,11 @@ function Example({ n }: any) {
         }}
       >
         <img src={url('server')} style={{ width: '20%' }} />
-      </ParallaxLayer>
+      </ParallaxLayer> */}
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={n + 2}
         speed={0.1}
-        onClick={() => parallax?.current.scrollTo(2)}
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -129,9 +127,9 @@ function Example({ n }: any) {
         }}
       >
         <img src={url('bash')} style={{ width: '40%' }} />
-      </ParallaxLayer>
+      </ParallaxLayer> */}
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={n + 3}
         speed={-0}
         style={{
@@ -139,10 +137,9 @@ function Example({ n }: any) {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        onClick={() => parallax?.current.scrollTo(0)}
       >
         <img src={url('clients-main')} style={{ width: '40%' }} />
-      </ParallaxLayer>
+      </ParallaxLayer> */}
     </>
   );
 }
