@@ -4,6 +4,9 @@ import { media768px } from '../../Styles/CommomStyles';
 export const TopContainer = styled.div`
   padding: 5vh 0;
   background-color: ${({ theme }) => theme.black};
+  ${media768px} {
+    display: none;
+  }
 `;
 
 export const StyledLifetimeTop = styled.div`
@@ -18,8 +21,8 @@ export const StyledLifetimeTop = styled.div`
   background-color: ${({ theme }) => theme.selected};
   box-shadow: 0 0 10px 1px ${({ theme }) => theme.selected};
   ${media768px} {
-    margin-left: 5%;
     width: 90%;
+    margin-left: 5%;
   }
 `;
 
@@ -69,6 +72,10 @@ export const StyledLifetimeItem = styled.div`
   }
   ${media768px} {
     height: auto;
+    flex-direction: column;
+    > div:first-child {
+      border-radius: 20px;
+    }
   }
 `;
 
@@ -78,22 +85,31 @@ export const StyledItemTitleAndYear = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 25%;
-  height: 100%;
   padding: 2%;
   background-color: ${({ theme }) => theme.selected};
   box-sizing: border-box;
+  ${media768px} {
+    flex-direction: row;
+    width: 100%;
+  }
 `;
 
 export const ItemYear = styled.span`
   font-size: 32px;
   font-weight: lighter;
   color: ${({ theme }) => theme.white};
+  ${media768px} {
+    font-size: 25px;
+  }
 `;
 
 export const ItemTitle = styled.span`
   font-size: 25px;
   color: ${({ theme }) => theme.white};
   text-align: center;
+  ${media768px} {
+    font-size: 20px;
+  }
 `;
 
 export const StyledDescription = styled.div`
@@ -102,9 +118,12 @@ export const StyledDescription = styled.div`
   align-items: center;
   text-align: center;
   width: 75%;
-  height: 100%;
   padding: 2%;
   box-sizing: border-box;
+  ${media768px} {
+    width: 100%;
+    padding: 3% 2%;
+  }
 `;
 
 export const ItemDescription = styled.span`

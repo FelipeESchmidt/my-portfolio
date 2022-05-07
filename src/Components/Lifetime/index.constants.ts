@@ -51,9 +51,14 @@ export const lifetime: Array<LifeTimeProps> = [
   },
   {
     year: 2020,
+    title: 'Life Change',
+    description: `After one year and a few months working as automation developer I decided to quit and focus in web development and something closer to my college curse.`,
+  },
+  {
+    year: 2020,
     title: 'Web development',
-    description: `After one year and a few months working as automation developer I decided to quit and focus in web development, so I started studying about it.
-      My initial focus was on Front-End with basic HTML, CSS and Javascript websites. After that completed I started to study about Back-End with PHP and SQL.`,
+    description: `So I started studying web development. My initial focus was on Front-End with basic HTML, CSS and Javascript websites. After that completed I started to
+      study about Back-End with PHP and SQL.`,
   },
   {
     year: 2021,
