@@ -8,5 +8,5 @@ export const links: Array<LinkProps> = [
   { name: 'Stacks', parallaxIndex: 1.4 },
   { name: 'Projects', parallaxIndex: 3.2 },
   { name: 'Lifetime', parallaxIndex: 5.05 },
-  { name: 'Contact', parallaxIndex: 6 },
+  { name: 'Contact', parallaxIndex: 9 },
 ];

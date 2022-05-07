@@ -1,9 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { media768px } from '../../Styles/CommomStyles';
 
 export const TopContainer = styled.div`
   padding: 5vh 0;
-  background-color: ${({ theme }) => theme.black};
   ${media768px} {
     display: none;
   }
@@ -18,8 +17,8 @@ export const StyledLifetimeTop = styled.div`
   justify-content: space-between;
   row-gap: 2em;
   margin-left: 20%;
-  background-color: ${({ theme }) => theme.selected};
-  box-shadow: 0 0 10px 1px ${({ theme }) => theme.selected};
+  background-color: ${({ theme }) => theme.info};
+  box-shadow: 0 0 10px 1px ${({ theme }) => theme.info};
   ${media768px} {
     width: 90%;
     margin-left: 5%;
@@ -32,8 +31,8 @@ export const StyledYear = styled.div`
   height: 40px;
   line-height: 40px;
   padding: 0 10px;
-  background-color: ${({ theme }) => theme.selected};
-  box-shadow: 0 0 10px 1px ${({ theme }) => theme.selected};
+  background-color: ${({ theme }) => theme.info};
+  box-shadow: 0 0 10px 1px ${({ theme }) => theme.info}, 0 0 10px 10px ${({ theme }) => theme.black};
   border-radius: 10px;
   color: ${({ theme }) => theme.white};
   cursor: pointer;
@@ -51,24 +50,25 @@ export const StyledLifetime = styled.div`
   }
 `;
 
-export const StyledLifetimeItem = styled.div`
+export const StyledLifetimeItem = styled.div<{ odd: boolean }>`
   display: flex;
   width: 100%;
   height: 180px;
   box-shadow: 0 3px 3px 1px ${({ theme }) => theme.darkGray};
   background-color: #3333;
   border-radius: 20px;
+  flex-direction: ${({ odd }) => (odd ? 'row-reverse' : 'row')};
   > div:first-child {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
-  :nth-child(2n + 2) {
-    flex-direction: row-reverse;
-    > div:first-child {
-      border-radius: 0;
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
+    ${({ odd }) =>
+      odd
+        ? css`
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+          `
+        : css`
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+          `};
   }
   ${media768px} {
     height: auto;
@@ -86,7 +86,7 @@ export const StyledItemTitleAndYear = styled.div`
   align-items: center;
   width: 25%;
   padding: 2%;
-  background-color: ${({ theme }) => theme.selected};
+  background-color: ${({ theme }) => theme.info};
   box-sizing: border-box;
   ${media768px} {
     flex-direction: row;
