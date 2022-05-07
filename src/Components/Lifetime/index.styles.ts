@@ -104,7 +104,7 @@ export const ItemYear = styled.span`
 `;
 
 export const ItemTitle = styled.span`
-  font-size: 25px;
+  font-size: 2.5vh;
   color: ${({ theme }) => theme.white};
   text-align: center;
   ${media768px} {
