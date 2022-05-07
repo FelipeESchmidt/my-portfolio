@@ -2,13 +2,17 @@ import * as React from 'react';
 import { ParallaxLayer } from '@react-spring/parallax';
 
 import ParallaxContext from '../../Contexts/ParallaxContext';
+import { useResponsive } from '../../Hooks/useResponsive';
 
 import { getYears, lifetime } from './index.constants';
 import * as S from './index.styles';
 
-function Lifetime({ offsetStart }: { offsetStart: number }) {
-  const speedBase = 0.4;
-  const offsetBase = 0.28;
+function Lifetime({ offsetStartBase }: { offsetStartBase: number }) {
+  const isResponsive = useResponsive();
+
+  const speedBase = isResponsive ? 0.33 : 0.4;
+  const offsetBase = isResponsive ? 0.28 : 0.34;
+  const offsetStart = isResponsive ? offsetStartBase - 0.1 : offsetStartBase;
 
   const calcOffset = (i: number) => offsetStart + (i % 3) * offsetBase + Math.trunc(i / 3);
   const calcSpeed = (i: number) => speedBase * (i % 3);
