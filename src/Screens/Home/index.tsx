@@ -6,7 +6,7 @@ import { theme } from '../../Theme/index.theme';
 import Home from '../../Components/Home';
 import Stacks from '../../Components/Stacks';
 import ParallaxContext from '../../Contexts/ParallaxContext';
-import Details from '../../Components/Details/paralax.example';
+import Details from '../../Components/Details';
 import Projects from '../../Components/Projects';
 import Lifetime, { LifetimeTop } from '../../Components/Lifetime';
 
@@ -15,7 +15,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <ParallaxContext.Provider value={{ parallax }}>
-        <Parallax ref={parallax} pages={9}>
+        <Parallax ref={parallax} pages={11}>
           <ParallaxLayer offset={0} speed={0.2}>
             <Home />
           </ParallaxLayer>
@@ -25,7 +25,7 @@ function App() {
           <ParallaxLayer offset={3.5} speed={0.2}>
             <Projects />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: 5, end: 9 }}>
+          <ParallaxLayer sticky={{ start: 5, end: 8.5 }}>
             <LifetimeTop offsetStartBase={5.2} />
           </ParallaxLayer>
           <Lifetime offsetStartBase={5.2} />

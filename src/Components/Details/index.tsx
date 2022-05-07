@@ -1,8 +1,18 @@
 import React, { useContext } from 'react';
 import { ParallaxLayer } from '@react-spring/parallax';
 import ParallaxContext from '../../Contexts/ParallaxContext';
+import { useResponsive } from '../../Hooks/useResponsive';
 
+import graduated from './assets/graduated.png';
+import eletric from './assets/eletric.png';
 import light from './assets/light.png';
+import baby from './assets/baby.png';
+import c from './assets/c.png';
+import php from './assets/php.png';
+import html from './assets/html.png';
+import react from './assets/react.png';
+import javascript from './assets/javascript.png';
+import typescript from './assets/typescript.png';
 import cloud from './assets/cloud.svg';
 
 const url = (name: string, wrap = false) =>
@@ -12,6 +22,8 @@ const url = (name: string, wrap = false) =>
 
 function Example({ n }: any) {
   const { parallax } = useContext(ParallaxContext);
+  const isResponsive = useResponsive();
+
   return (
     <>
       <ParallaxLayer
@@ -25,6 +37,17 @@ function Example({ n }: any) {
 
       <ParallaxLayer
         offset={1}
+        speed={0}
+        factor={4}
+        style={{
+          backgroundImage: url('stars', true),
+          backgroundSize: 'cover',
+          zIndex: -1,
+        }}
+      />
+
+      <ParallaxLayer
+        offset={5}
         speed={0}
         factor={4}
         style={{
@@ -81,6 +104,76 @@ function Example({ n }: any) {
         <img src={cloud} alt="" style={{ width: '20%', minWidth: '200px', marginLeft: '5%' }} />
         <img src={cloud} alt="" style={{ width: '15%', minWidth: '150px', marginLeft: '75%' }} />
       </ParallaxLayer>
+
+      {!isResponsive && (
+        <ParallaxLayer offset={5.2} speed={2.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+          <img src={baby} alt="" style={{ width: '12%', minWidth: '150px', marginLeft: '7%' }} />
+        </ParallaxLayer>
+      )}
+
+      {!isResponsive && (
+        <ParallaxLayer offset={5.8} speed={3} style={{ opacity: 0.6, pointerEvents: 'none' }}>
+          <img
+            src={eletric}
+            alt=""
+            style={{ width: '12%', minWidth: '150px', marginLeft: '80%' }}
+          />
+        </ParallaxLayer>
+      )}
+
+      {!isResponsive && (
+        <ParallaxLayer offset={6.5} speed={3} style={{ opacity: 0.3, pointerEvents: 'none' }}>
+          <img
+            src={graduated}
+            alt=""
+            style={{ width: '12%', minWidth: '150px', marginLeft: '6%' }}
+          />
+        </ParallaxLayer>
+      )}
+
+      {!isResponsive && (
+        <ParallaxLayer offset={7.3} speed={2} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+          <img src={c} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '6%' }} />
+        </ParallaxLayer>
+      )}
+
+      {!isResponsive && (
+        <ParallaxLayer offset={7.7} speed={2.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+          <img src={html} alt="" style={{ width: '5%', minWidth: '80px', marginLeft: '82%' }} />
+        </ParallaxLayer>
+      )}
+
+      {!isResponsive && (
+        <ParallaxLayer offset={7.8} speed={3} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+          <img
+            src={javascript}
+            alt=""
+            style={{ width: '6%', minWidth: '80px', marginLeft: '88%' }}
+          />
+        </ParallaxLayer>
+      )}
+
+      {!isResponsive && (
+        <ParallaxLayer offset={7.95} speed={3.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+          <img src={php} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '8%' }} />
+        </ParallaxLayer>
+      )}
+
+      {!isResponsive && (
+        <>
+          <ParallaxLayer offset={8.4} speed={3} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img src={react} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '8%' }} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={8.45} speed={2} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img
+              src={typescript}
+              alt=""
+              style={{ width: '6%', minWidth: '80px', marginLeft: '83%' }}
+            />
+          </ParallaxLayer>
+        </>
+      )}
+
       {/* 
       <ParallaxLayer
         offset={n + 3.5}
