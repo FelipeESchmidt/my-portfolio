@@ -26,7 +26,7 @@ function App() {
             <Projects />
           </ParallaxLayer>
           <ParallaxLayer sticky={{ start: 5, end: 9 }}>
-            <LifetimeTop />
+            <LifetimeTop offsetStartBase={5.2} />
           </ParallaxLayer>
           <Lifetime offsetStartBase={5.2} />
           <Details n={3} />

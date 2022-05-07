@@ -2,25 +2,18 @@ import * as React from 'react';
 import { ParallaxLayer } from '@react-spring/parallax';
 
 import ParallaxContext from '../../Contexts/ParallaxContext';
-import { useResponsive } from '../../Hooks/useResponsive';
 
 import { getYears, lifetime } from './index.constants';
 import * as S from './index.styles';
+import { useLifeTimeCalculator } from '../../Hooks/useLifeTimeCalculator';
 
 function Lifetime({ offsetStartBase }: { offsetStartBase: number }) {
-  const isResponsive = useResponsive();
-
-  const speedBase = isResponsive ? 0.33 : 0.4;
-  const offsetBase = isResponsive ? 0.28 : 0.34;
-  const offsetStart = isResponsive ? offsetStartBase - 0.1 : offsetStartBase;
-
-  const calcOffset = (i: number) => offsetStart + (i % 3) * offsetBase + Math.trunc(i / 3);
-  const calcSpeed = (i: number) => speedBase * (i % 3);
+  const { calcSpeed, calcOffset } = useLifeTimeCalculator(offsetStartBase);
 
   return (
     <>
       {lifetime.map((item, i) => (
-        <ParallaxLayer offset={calcOffset(i)} speed={calcSpeed(i)} factor={0}>
+        <ParallaxLayer key={item.title} offset={calcOffset(i)} speed={calcSpeed(i)} factor={0}>
           <S.StyledLifetime>
             <S.StyledLifetimeItem key={item.title}>
               <S.StyledItemTitleAndYear>
@@ -38,17 +31,29 @@ function Lifetime({ offsetStartBase }: { offsetStartBase: number }) {
   );
 }
 
-export function LifetimeTop() {
+export function LifetimeTop({ offsetStartBase }: { offsetStartBase: number }) {
+  const speedOffsetDiff = 0.15;
+
+  const { calcOffset } = useLifeTimeCalculator(offsetStartBase);
   const { parallax } = React.useContext(ParallaxContext);
-  const handleClick = (i: number) => {
-    parallax?.current.scrollTo(5 + i * 0.23);
+
+  const years = getYears();
+
+  const findYearOffset = (year: number): number => {
+    const i = lifetime.findIndex((item) => item.year === year);
+    return Math.trunc(i / 3) * 3;
+  };
+
+  const handleClick = (year: number) => {
+    const offset = findYearOffset(year);
+    parallax?.current.scrollTo(calcOffset(offset) - speedOffsetDiff);
   };
 
   return (
     <S.TopContainer>
       <S.StyledLifetimeTop>
-        {getYears().map((year, i) => (
-          <S.StyledYear onClick={() => handleClick(i)} key={year}>
+        {years.map((year) => (
+          <S.StyledYear onClick={() => handleClick(year)} key={year}>
             {year}
           </S.StyledYear>
         ))}
