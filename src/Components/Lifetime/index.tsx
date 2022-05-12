@@ -15,7 +15,7 @@ function Lifetime({ offsetStartBase }: { offsetStartBase: number }) {
       {lifetime.map((item, i) => (
         <ParallaxLayer key={item.title} offset={calcOffset(i)} speed={calcSpeed(i)} factor={0}>
           <S.StyledLifetime>
-            <S.StyledLifetimeItem key={item.title} odd={i % 2 === 1}>
+            <S.StyledLifetimeItem odd={i % 2 === 1}>
               <S.StyledItemTitleAndYear>
                 <S.ItemYear>{item.year}</S.ItemYear>
                 <S.ItemTitle>{item.title}</S.ItemTitle>

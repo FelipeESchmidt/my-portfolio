@@ -1,0 +1,15 @@
+
+<svg width="328px" height="193px" viewBox="346 487 328 193" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="client-copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(346.000000, 487.000000)">
+        <rect id="Rectangle-5" fill="#050505" x="0" y="0" width="328" height="193" rx="8"></rect>
+        <path d="M0,25.5441176 L328,25.5441176 L328,185.007812 C328,189.421775 324.428194,193 319.993845,193 L8.00615545,193 C3.58447789,193 0,189.424975 0,185.007812 L0,25.5441176 Z" id="Rectangle-6" fill="#212121"></path>
+        <g id="dots" transform="translate(8.519481, 8.514706)">
+            <ellipse id="red" fill="#c62828" cx="5.67965368" cy="5.67647059" rx="5.67965368" ry="5.67647059"></ellipse>
+            <ellipse id="yellow" fill="#ffb300" cx="22.7186147" cy="5.67647059" rx="5.67965368" ry="5.67647059"></ellipse>
+            <ellipse id="green" fill="#2e7d32" cx="39.7575758" cy="5.67647059" rx="5.67965368" ry="5.67647059"></ellipse>
+        </g>
+    </g>
+</svg>

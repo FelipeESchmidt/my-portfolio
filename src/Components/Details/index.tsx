@@ -9,6 +9,7 @@ import light from './assets/light.png';
 import baby from './assets/baby.png';
 import c from './assets/c.png';
 import php from './assets/php.png';
+import node from './assets/node.png';
 import html from './assets/html.png';
 import react from './assets/react.png';
 import javascript from './assets/javascript.png';
@@ -156,6 +157,12 @@ function Example({ n }: any) {
       {!isResponsive && (
         <ParallaxLayer offset={7.95} speed={3.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
           <img src={php} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '8%' }} />
+        </ParallaxLayer>
+      )}
+
+      {!isResponsive && (
+        <ParallaxLayer offset={7.8} speed={3.2} style={{ opacity: 0.6, pointerEvents: 'none' }}>
+          <img src={node} alt="" style={{ width: '7%', minWidth: '80px', marginLeft: '6%' }} />
         </ParallaxLayer>
       )}
 
