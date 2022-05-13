@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { media768px } from '../../Styles/CommomStyles';
 import navigator from './assets/navigator.svg';
 
 const miniContainerPaddings = [0, '18%', 0, '2%', 0];
@@ -18,6 +19,21 @@ export const StyledMiniContainer = styled.div<{ left: boolean }>`
   background-size: cover;
   border-radius: 20px;
   z-index: 1;
+  ${media768px} {
+    width: ${({ left }) => (left ? '90%' : '25%')};
+    height: 100px;
+    border-radius: 5px;
+    margin-left: ${({ left }) => (left ? '5%' : '70%')};
+    ${({ left }) =>
+      left
+        ? css`
+            justify-content: end;
+          `
+        : css`
+            background: none;
+            align-items: flex-end;
+          `};
+  }
 `;
 
 export const StyledBigContainer = styled.div`
@@ -30,6 +46,10 @@ export const StyledBigContainer = styled.div`
   border-radius: 40px;
   pointer-events: none;
   z-index: 2;
+  ${media768px} {
+    width: 90%;
+    margin-left: 5%;
+  }
 `;
 
 export const StyledText = styled.h3`
@@ -37,6 +57,9 @@ export const StyledText = styled.h3`
   font-weight: lighter;
   color: ${({ theme }) => theme.white};
   letter-spacing: 1px;
+  ${media768px} {
+    display: none;
+  }
 `;
 
 export const StyledLinks = styled.div`
@@ -54,6 +77,13 @@ export const ImageWrapper = styled.div`
   margin: ${getRightMiniContainerPadding()};
   margin-top: 30px;
   pointer-events: all;
+  ${media768px} {
+    margin: 0;
+    width: 50%;
+    min-width: 75px;
+    align-items: flex-end;
+    padding-right: 20px;
+  }
 `;
 
 export const Image = styled.img`

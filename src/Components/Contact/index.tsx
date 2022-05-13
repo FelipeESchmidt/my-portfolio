@@ -8,11 +8,17 @@ import Form from '../Form';
 import * as S from './index.styles';
 
 import me from './assets/me.png';
+import { useResponsive } from '../../Hooks/useResponsive';
 
 function Contact() {
+  const isResponsive = useResponsive();
   return (
     <>
-      <ParallaxLayer offset={9.3} speed={-3.5} style={{ pointerEvents: 'none' }}>
+      <ParallaxLayer
+        offset={isResponsive ? 9.05 : 9.3}
+        speed={-3.5}
+        style={{ pointerEvents: 'none' }}
+      >
         <S.StyledMiniContainer left={true}>
           <S.StyledText>Feel free to contact me</S.StyledText>
           <S.StyledLinks>
@@ -24,7 +30,11 @@ function Contact() {
           </S.StyledLinks>
         </S.StyledMiniContainer>
       </ParallaxLayer>
-      <ParallaxLayer offset={9.3} speed={-3.5} style={{ pointerEvents: 'none' }}>
+      <ParallaxLayer
+        offset={isResponsive ? 9.05 : 9.3}
+        speed={-3.5}
+        style={{ pointerEvents: 'none' }}
+      >
         <S.StyledMiniContainer left={false}>
           <S.ImageWrapper>
             <S.Image src={me} />
