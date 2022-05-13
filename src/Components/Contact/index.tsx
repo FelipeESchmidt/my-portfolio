@@ -3,6 +3,7 @@ import { ParallaxLayer } from '@react-spring/parallax';
 
 import { socials } from '../MainInfo/index.constants';
 import { Social } from '../MainInfo/index.styles';
+import Form from '../Form';
 
 import * as S from './index.styles';
 
@@ -32,7 +33,7 @@ function Contact() {
       </ParallaxLayer>
       <ParallaxLayer offset={9.2} speed={3.5} style={{ pointerEvents: 'none' }}>
         <S.StyledBigContainer>
-          <input type="text" name="subject" id="subject" />
+          <Form onSubmit={(e: any) => console.log(e)} />
         </S.StyledBigContainer>
       </ParallaxLayer>
     </>
