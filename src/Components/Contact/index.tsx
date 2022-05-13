@@ -33,7 +33,7 @@ function Contact() {
       </ParallaxLayer>
       <ParallaxLayer offset={9.2} speed={3.5} style={{ pointerEvents: 'none' }}>
         <S.StyledBigContainer>
-          <Form onSubmit={(e: any) => console.log(e)} />
+          <Form onSubmit={(info: any) => console.log(info)} />
         </S.StyledBigContainer>
       </ParallaxLayer>
     </>

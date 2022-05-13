@@ -6,7 +6,7 @@ const baseFormStyles = css`
   font-size: 22px;
 `;
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -39,7 +39,7 @@ export const Label = styled.label<{ top?: boolean }>`
           transform-origin: 0 0;
         `
       : css`
-          transform: translate(10px, 12px);
+          transform: translate(10px, 10px);
         `}
 `;
 
@@ -58,6 +58,10 @@ const basicInputStyles = css`
     background-color: ${({ theme }) => theme.selected};
     color: ${({ theme }) => theme.black};
   }
+  :-webkit-autofill,
+  :-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
 `;
 
 export const Input = styled.input`
@@ -75,8 +79,27 @@ export const Textarea = styled.textarea`
   resize: none;
 `;
 
-export const Button = styled.button`
+const enableButton = css`
+  cursor: pointer;
+`;
+
+const disableButton = css`
+  opacity: 0.3;
+`;
+
+export const Button = styled.button<{ enable: boolean }>`
   ${baseFormStyles};
   width: 100%;
   max-width: 300px;
+  padding: 10px;
+  border: 0;
+  border-radius: 15px;
+  background-color: ${({ theme }) => theme.selected};
+  box-shadow: 0 3px 4px 1px ${({ theme }) => theme.black},
+    0 0 2px 1px ${({ theme }) => theme.selected};
+  color: ${({ theme }) => theme.white};
+  ${({ enable }) => (enable ? enableButton : disableButton)};
+  font-weight: lighter;
+  text-transform: uppercase;
+  transition: 1s;
 `;

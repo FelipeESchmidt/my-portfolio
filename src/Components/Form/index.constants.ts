@@ -10,23 +10,29 @@ interface InputProps {
 export const inputs: Array<InputProps> = [
   {
     component: Input,
-    label: 'Nome',
+    label: 'Name',
     props: { type: 'text', id: 'name', name: 'name', autoComplete: 'off' },
   },
   {
     component: Input,
-    label: 'Assunto',
-    props: { type: 'text', id: 'subject', name: 'subject', autoComplete: 'off' },
+    label: 'Email',
+    props: { type: 'email', id: 'email', name: 'email', autoComplete: 'off' },
   },
   {
     component: Textarea,
-    label: 'Mensagem',
+    label: 'Message',
     props: { id: 'message', name: 'message' },
   },
 ];
 
-export const startTopState = () => {
-  const topState: { [key: string]: boolean } = {};
-  inputs.forEach((input) => (topState[input.props.name] = false));
-  return topState;
+export const startTopsState = () => {
+  const topsState: { [key: string]: boolean } = {};
+  inputs.forEach((input) => (topsState[input.label] = false));
+  return topsState;
+};
+
+export const startValuesState = () => {
+  const valuesState: { [key: string]: string } = {};
+  inputs.forEach((input) => (valuesState[input.label] = ''));
+  return valuesState;
 };
