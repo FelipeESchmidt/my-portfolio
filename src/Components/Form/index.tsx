@@ -24,6 +24,7 @@ function Form({ onSubmit }: any) {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    if (!isButtonEnable()) return;
     const payload = {
       ...values,
     };

@@ -17,6 +17,7 @@ export const StyledContainer = styled.form`
 export const InputContainer = styled.div`
   position: relative;
   width: 100%;
+  max-width: 650px;
   margin-top: 1rem;
   margin-bottom: 1rem;
 `;
@@ -54,6 +55,7 @@ const basicInputStyles = css`
   border-bottom: 2px solid ${({ theme }) => theme.black};
   box-shadow: 0 3px 4px 1px ${({ theme }) => theme.black};
   box-sizing: border-box;
+  caret-color: ${({ theme }) => theme.selected};
   ::selection {
     background-color: ${({ theme }) => theme.selected};
     color: ${({ theme }) => theme.black};
