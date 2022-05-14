@@ -16,6 +16,8 @@ import javascript from './assets/javascript.png';
 import typescript from './assets/typescript.png';
 import cloud from './assets/cloud.svg';
 
+import { ArrowUp } from './index.styles';
+
 const url = (name: string, wrap = false) =>
   `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
     wrap ? ')' : ''
@@ -33,8 +35,6 @@ function Example({ n }: any) {
         speed={1}
         style={{ backgroundColor: '#5555', zIndex: -2 }}
       />
-      {/* <ParallaxLayer offset={n + 2} speed={1} style={{ backgroundColor: '#805E73', zIndex: -2 }} />
-      <ParallaxLayer offset={n + 3} speed={1} style={{ backgroundColor: '#87BCDE', zIndex: -2 }} /> */}
 
       <ParallaxLayer
         offset={1}
@@ -107,67 +107,51 @@ function Example({ n }: any) {
       </ParallaxLayer>
 
       {!isResponsive && (
-        <ParallaxLayer offset={5.2} speed={2.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
-          <img src={baby} alt="" style={{ width: '12%', minWidth: '150px', marginLeft: '7%' }} />
-        </ParallaxLayer>
-      )}
-
-      {!isResponsive && (
-        <ParallaxLayer offset={5.8} speed={3} style={{ opacity: 0.6, pointerEvents: 'none' }}>
-          <img
-            src={eletric}
-            alt=""
-            style={{ width: '12%', minWidth: '150px', marginLeft: '80%' }}
-          />
-        </ParallaxLayer>
-      )}
-
-      {!isResponsive && (
-        <ParallaxLayer offset={6.5} speed={3} style={{ opacity: 0.3, pointerEvents: 'none' }}>
-          <img
-            src={graduated}
-            alt=""
-            style={{ width: '12%', minWidth: '150px', marginLeft: '6%' }}
-          />
-        </ParallaxLayer>
-      )}
-
-      {!isResponsive && (
-        <ParallaxLayer offset={7.3} speed={2} style={{ opacity: 0.5, pointerEvents: 'none' }}>
-          <img src={c} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '6%' }} />
-        </ParallaxLayer>
-      )}
-
-      {!isResponsive && (
-        <ParallaxLayer offset={7.7} speed={2.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
-          <img src={html} alt="" style={{ width: '5%', minWidth: '80px', marginLeft: '82%' }} />
-        </ParallaxLayer>
-      )}
-
-      {!isResponsive && (
-        <ParallaxLayer offset={7.8} speed={3} style={{ opacity: 0.5, pointerEvents: 'none' }}>
-          <img
-            src={javascript}
-            alt=""
-            style={{ width: '6%', minWidth: '80px', marginLeft: '88%' }}
-          />
-        </ParallaxLayer>
-      )}
-
-      {!isResponsive && (
-        <ParallaxLayer offset={7.95} speed={3.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
-          <img src={php} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '8%' }} />
-        </ParallaxLayer>
-      )}
-
-      {!isResponsive && (
-        <ParallaxLayer offset={7.8} speed={3.2} style={{ opacity: 0.6, pointerEvents: 'none' }}>
-          <img src={node} alt="" style={{ width: '7%', minWidth: '80px', marginLeft: '6%' }} />
-        </ParallaxLayer>
-      )}
-
-      {!isResponsive && (
         <>
+          <ParallaxLayer offset={5.2} speed={2.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img src={baby} alt="" style={{ width: '12%', minWidth: '150px', marginLeft: '7%' }} />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={5.8} speed={3} style={{ opacity: 0.6, pointerEvents: 'none' }}>
+            <img
+              src={eletric}
+              alt=""
+              style={{ width: '12%', minWidth: '150px', marginLeft: '80%' }}
+            />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={6.5} speed={3} style={{ opacity: 0.3, pointerEvents: 'none' }}>
+            <img
+              src={graduated}
+              alt=""
+              style={{ width: '12%', minWidth: '150px', marginLeft: '6%' }}
+            />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={7.3} speed={2} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img src={c} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '6%' }} />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={7.7} speed={2.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img src={html} alt="" style={{ width: '5%', minWidth: '80px', marginLeft: '82%' }} />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={7.8} speed={3} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img
+              src={javascript}
+              alt=""
+              style={{ width: '6%', minWidth: '80px', marginLeft: '88%' }}
+            />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={7.95} speed={3.5} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img src={php} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '8%' }} />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={7.8} speed={3.2} style={{ opacity: 0.6, pointerEvents: 'none' }}>
+            <img src={node} alt="" style={{ width: '7%', minWidth: '80px', marginLeft: '6%' }} />
+          </ParallaxLayer>
+
           <ParallaxLayer offset={8.4} speed={3} style={{ opacity: 0.5, pointerEvents: 'none' }}>
             <img src={react} alt="" style={{ width: '6%', minWidth: '80px', marginLeft: '8%' }} />
           </ParallaxLayer>
@@ -181,65 +165,9 @@ function Example({ n }: any) {
         </>
       )}
 
-      {/* 
-      <ParallaxLayer
-        offset={n + 3.5}
-        speed={-0.4}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          pointerEvents: 'none',
-        }}
-      >
-        <img src={url('earth')} style={{ width: '60%' }} />
-      </ParallaxLayer> */}
-
-      {/* <ParallaxLayer
-        offset={n + 3}
-        speed={-0.3}
-        style={{
-          backgroundSize: '80%',
-          backgroundPosition: 'center',
-          backgroundImage: url('clients', true),
-        }}
-      /> */}
-
-      {/* <ParallaxLayer
-        offset={n + 1}
-        speed={0.1}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <img src={url('server')} style={{ width: '20%' }} />
-      </ParallaxLayer> */}
-
-      {/* <ParallaxLayer
-        offset={n + 2}
-        speed={0.1}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <img src={url('bash')} style={{ width: '40%' }} />
-      </ParallaxLayer> */}
-
-      {/* <ParallaxLayer
-        offset={n + 3}
-        speed={-0}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <img src={url('clients-main')} style={{ width: '40%' }} />
-      </ParallaxLayer> */}
+      <ParallaxLayer offset={9.92} speed={-4}>
+        <ArrowUp onClick={() => parallax?.current.scrollTo(0)} />
+      </ParallaxLayer>
     </>
   );
 }
