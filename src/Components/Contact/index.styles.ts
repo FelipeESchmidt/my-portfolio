@@ -52,6 +52,44 @@ export const StyledBigContainer = styled.div`
   }
 `;
 
+export const WholePageWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100vh;
+  margin-left: 10%;
+  @media (max-width: 456px) {
+    width: 100%;
+    margin-left: 0;
+  }
+`;
+
+export const WholeContactWrapper = styled.div`
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  > .${StyledMiniContainer.styledComponentId} {
+    margin: 0;
+  }
+  > .${StyledBigContainer.styledComponentId} {
+    margin: 0;
+  }
+  ${media768px} {
+    ${css`
+      flex-direction: column;
+      gap: 10px;
+      > .${StyledMiniContainer.styledComponentId}:last-child {
+        position: absolute;
+        top: 6%;
+        right: 5%;
+      }
+    `}
+  }
+`;
+
 export const StyledText = styled.h3`
   padding: ${getLeftMiniContainerPadding()};
   font-weight: lighter;
@@ -93,4 +131,32 @@ export const Image = styled.img`
   max-height: 300px;
   border-radius: 50%;
   box-shadow: 0 0 12px 10px ${({ theme }) => theme.black}, 0 0 4px 2px ${({ theme }) => theme.white};
+`;
+
+export const BreadcrumbItem = styled.a`
+  :before {
+    content: '>';
+    color: ${({ theme }) => theme.white};
+    margin-right: 10px;
+  }
+  font-size: 1.2em;
+  color: ${({ theme }) => theme.white};
+  text-decoration: none;
+`;
+
+export const Breadcrumb = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  ${css`
+    > .${BreadcrumbItem.styledComponentId}:first-child {
+      :before {
+        content: '';
+      }
+    }
+    > .${BreadcrumbItem.styledComponentId}:last-child {
+      color: ${({ theme }) => theme.selected};
+    }
+  `}
 `;
