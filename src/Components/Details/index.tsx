@@ -15,13 +15,9 @@ import react from './assets/react.png';
 import javascript from './assets/javascript.png';
 import typescript from './assets/typescript.png';
 import cloud from './assets/cloud.svg';
+import stars from './assets/stars.svg';
 
 import { ArrowUp } from './index.styles';
-
-const url = (name: string, wrap = false) =>
-  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ')' : ''
-  }`;
 
 function Example({ n }: any) {
   const { parallax } = useContext(ParallaxContext);
@@ -41,7 +37,7 @@ function Example({ n }: any) {
         speed={0}
         factor={4}
         style={{
-          backgroundImage: url('stars', true),
+          backgroundImage: `url(${stars})`,
           backgroundSize: 'cover',
           zIndex: -1,
         }}
@@ -52,7 +48,7 @@ function Example({ n }: any) {
         speed={0}
         factor={4}
         style={{
-          backgroundImage: url('stars', true),
+          backgroundImage: `url(${stars})`,
           backgroundSize: 'cover',
           zIndex: -1,
         }}
@@ -165,7 +161,7 @@ function Example({ n }: any) {
         </>
       )}
 
-      <ParallaxLayer offset={9.92} speed={-4}>
+      <ParallaxLayer offset={isResponsive ? 8.92 : 9.92} speed={-4}>
         <ArrowUp onClick={() => parallax?.current.scrollTo(0)} />
       </ParallaxLayer>
     </>

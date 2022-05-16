@@ -15,7 +15,8 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLinkClick = (link: LinkProps) => {
-    if (!isResponsive) parallax?.current.scrollTo(link.parallaxIndex);
+    if (!isResponsive || (isResponsive && !link.linkTo))
+      parallax?.current.scrollTo(link.parallaxIndex);
     else if (link.linkTo) navigate(link.linkTo);
     setMenuOpen(false);
   };
