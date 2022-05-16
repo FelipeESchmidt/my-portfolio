@@ -10,13 +10,15 @@ import { theme } from '../../Theme/index.theme';
 import Projects from '../../Components/Projects';
 import ParallaxContext from '../../Contexts/ParallaxContext';
 import Lifetime, { LifetimeTop } from '../../Components/Lifetime';
+import { useResponsive } from '../../Hooks/useResponsive';
 
 function App() {
+  const isResponsive = useResponsive();
   const parallax = React.useRef<IParallax>(null!);
   return (
     <ThemeProvider theme={theme}>
       <ParallaxContext.Provider value={{ parallax }}>
-        <Parallax ref={parallax} pages={10}>
+        <Parallax ref={parallax} pages={isResponsive ? 9 : 10}>
           <ParallaxLayer offset={0} speed={0.2}>
             <Home />
           </ParallaxLayer>

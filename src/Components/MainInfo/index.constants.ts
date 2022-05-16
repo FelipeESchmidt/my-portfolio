@@ -12,10 +12,10 @@ interface Social {
 export const whoImI: string = "Sup, I'm Felipe Schmidt";
 export const whatImI: string = "I'm a Brazilian Front-end Developer";
 export const whoIWannaBe: Array<string> = [
-  'Studying to became a FullStack Developer',
-  'Studying to became a Better Person',
-  'Studying to became a Better Professional',
-  'Studying to became a Computer Scientist',
+  'Studying to become a FullStack Developer',
+  'Studying to become a Better Person',
+  'Studying to become a Better Professional',
+  'Studying to become a Computer Scientist',
 ];
 export const whoIWannaBeTimes: Array<number> = [1500, 1500, 1500, 5000];
 

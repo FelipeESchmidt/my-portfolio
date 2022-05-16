@@ -1,19 +1,22 @@
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Spring } from 'react-spring';
 import ParallaxContext from '../../Contexts/ParallaxContext';
 import { useResponsive } from '../../Hooks/useResponsive';
 import { Container } from '../../Styles/CommomStyles';
-import { links } from './index.constants';
+import { LinkProps, links } from './index.constants';
 import * as S from './index.styles';
 
 function Header() {
+  let navigate = useNavigate();
   const { parallax } = useContext(ParallaxContext);
 
   const isResponsive = useResponsive();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLinkClick = (i: number) => {
-    parallax?.current.scrollTo(i);
+  const handleLinkClick = (link: LinkProps) => {
+    if (!isResponsive) parallax?.current.scrollTo(link.parallaxIndex);
+    else if (link.linkTo) navigate(link.linkTo);
     setMenuOpen(false);
   };
 
@@ -41,10 +44,7 @@ function Header() {
                 to={[{ opacity: 1 }]}
               >
                 {(styles: any) => (
-                  <S.StyledLink
-                    onClick={() => handleLinkClick(link.parallaxIndex)}
-                    style={{ ...styles }}
-                  >
+                  <S.StyledLink onClick={() => handleLinkClick(link)} style={{ ...styles }}>
                     {link.name}
                   </S.StyledLink>
                 )}
