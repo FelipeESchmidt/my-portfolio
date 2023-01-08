@@ -38,14 +38,19 @@ function Projects() {
       >
         <AiFillLeftCircle />
       </S.StyledProjectMinor>
-      <S.StyledProjectMain background={showingProjects[1].main}>
-        <S.StyledMainButtonWrapper left={true} onClick={() => handleMainClick('link')}>
-          <AiOutlineEye />
-        </S.StyledMainButtonWrapper>
-        <S.StyledMainButtonWrapper left={false} onClick={() => handleMainClick('repo')}>
-          <AiOutlineGithub />
-        </S.StyledMainButtonWrapper>
-      </S.StyledProjectMain>
+      <S.StyledProjectMainContainer>
+        <S.StyledProjectMain background={showingProjects[main].main}>
+          <S.StyledMainButtonWrapper left={true} onClick={() => handleMainClick('link')}>
+            <AiOutlineEye />
+          </S.StyledMainButtonWrapper>
+          <S.StyledMainButtonWrapper left={false} onClick={() => handleMainClick('repo')}>
+            <AiOutlineGithub />
+          </S.StyledMainButtonWrapper>
+        </S.StyledProjectMain>
+        <S.StyledProjectDescription>
+          {showingProjects[main].description}
+        </S.StyledProjectDescription>
+      </S.StyledProjectMainContainer>
       <S.StyledProjectMinor
         onClick={handleNext}
         background={showingProjects[right].minor}

@@ -11,6 +11,7 @@ interface ProjectType {
   link: string;
   repo: string;
   name: string;
+  description?: string;
 }
 
 export const projects: Array<ProjectType> = [
@@ -20,6 +21,7 @@ export const projects: Array<ProjectType> = [
     repo: 'https://github.com/FelipeESchmidt/React-CertificatesPage-Typescript',
     main: certificates,
     minor: certificates,
+    description: 'React app to show my certificates.',
   },
   {
     name: 'portfolio',
@@ -27,6 +29,7 @@ export const projects: Array<ProjectType> = [
     repo: 'https://github.com/FelipeESchmidt/my-portfolio',
     main: portfolio,
     minor: portfolio,
+    description: 'React parallax app to show my portfolio. (This one)',
   },
   {
     name: 'blog',
@@ -34,6 +37,7 @@ export const projects: Array<ProjectType> = [
     repo: 'https://github.com/FelipeESchmidt/React--Sistema--Blog',
     main: blog,
     minor: blog,
+    description: 'React app to create post and commentaries on them.',
   },
   {
     name: 'library',
@@ -41,6 +45,7 @@ export const projects: Array<ProjectType> = [
     repo: 'https://github.com/FelipeESchmidt/React--Sistema--Biblioteca',
     main: library,
     minor: library,
+    description: 'React app to sort books in some shelves.',
   },
   {
     name: 'teams-picker',
@@ -48,5 +53,6 @@ export const projects: Array<ProjectType> = [
     repo: 'https://github.com/FelipeESchmidt/Teams-picker',
     main: teams_picker_gif,
     minor: teams_picker,
+    description: 'React app to create teams from some players list.',
   },
 ];

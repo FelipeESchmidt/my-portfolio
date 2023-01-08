@@ -54,6 +54,10 @@ const minorOnHover = css`
 const mainOnHover = css`
   :hover {
     transform: scale(1.1);
+    & ~ h4 {
+      margin-top: 2vh;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -82,21 +86,37 @@ export const StyledProjectMinor = styled.div<{ background: string; left: boolean
   }
 `;
 
+export const StyledProjectMainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 50%;
+  ${media768px} {
+    width: 100%;
+    :hover {
+      transform: none;
+    }
+  }
+`;
+
 export const StyledProjectMain = styled.div<{ background: string }>`
   position: relative;
-  width: 50%;
-  padding-bottom: calc(9 / 16 * 50%);
+  width: 100%;
+  padding-bottom: calc(9 / 16 * 100%);
   background: ${({ background }) => `url(${background})`};
   background-repeat: repeat-y;
   z-index: 10;
   ${basicProject};
   ${mainOnHover};
+`;
+
+export const StyledProjectDescription = styled.h4`
+  color: white;
+  margin-bottom: 2vh;
+  transition: 1s;
   ${media768px} {
-    width: 100%;
-    padding-bottom: calc(9 / 16 * 100%);
-    :hover {
-      transform: none;
-    }
+    margin-bottom: 0;
+    margin-top: 6vh;
   }
 `;
 
