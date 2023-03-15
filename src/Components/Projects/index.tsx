@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { AiFillLeftCircle, AiFillRightCircle, AiOutlineEye, AiOutlineGithub } from 'react-icons/ai';
+import { AiOutlineEye, AiOutlineGithub } from 'react-icons/ai';
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 import { projects } from './index.constants';
 import * as S from './index.styles';
@@ -36,7 +37,7 @@ function Projects() {
         background={showingProjects[left].minor}
         left={true}
       >
-        <AiFillLeftCircle />
+        <BsFillArrowLeftCircleFill />
       </S.StyledProjectMinor>
       <S.StyledProjectMainContainer>
         <S.StyledProjectMain background={showingProjects[main].main}>
@@ -62,7 +63,7 @@ function Projects() {
         background={showingProjects[right].minor}
         left={false}
       >
-        <AiFillRightCircle />
+        <BsFillArrowRightCircleFill />
       </S.StyledProjectMinor>
     </S.StyledProjects>
   );

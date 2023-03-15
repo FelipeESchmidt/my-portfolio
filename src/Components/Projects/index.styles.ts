@@ -36,9 +36,10 @@ const svgInsideProject = css`
     transform: translate(-50%, -50%);
     transition: 1s;
     border-radius: 50%;
+    padding: 1px;
     font-size: 50px;
-    color: ${({ theme }) => theme.white};
-    background-color: ${({ theme }) => theme.black};
+    color: ${({ theme }) => theme.black};
+    background-color: ${({ theme }) => theme.white};
   }
 `;
 
