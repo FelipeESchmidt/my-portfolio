@@ -43,6 +43,14 @@ const svgInsideProject = css`
   }
 `;
 
+const invertsvgInsideProject = css`
+  ${svgInsideProject};
+  > svg {
+    color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => theme.black};
+  }
+`;
+
 const responsiveSvgInsideProject = css`
   > svg {
     font-size: 40px;
@@ -142,7 +150,7 @@ export const StyledProjectDescription = styled.h4`
 `;
 
 const svgInsideMajorProject = css`
-  ${svgInsideProject};
+  ${invertsvgInsideProject};
   opacity: 0;
   transition: 1s;
 `;
