@@ -21,7 +21,11 @@ const basicProject = css`
   background-position: center;
   background-size: cover;
   box-shadow: 0 2px 5px 1px ${({ theme }) => theme.black};
+  border-radius: 10px;
   cursor: pointer;
+  ${media768px} {
+    border-radius: 0;
+  }
 `;
 
 const svgInsideProject = css`
@@ -33,7 +37,7 @@ const svgInsideProject = css`
     transition: 1s;
     border-radius: 50%;
     font-size: 50px;
-    color: ${({ theme }) => theme.selected};
+    color: ${({ theme }) => theme.white};
     background-color: ${({ theme }) => theme.black};
   }
 `;
@@ -41,7 +45,6 @@ const svgInsideProject = css`
 const responsiveSvgInsideProject = css`
   > svg {
     font-size: 40px;
-    color: ${({ theme }) => theme.white};
   }
 `;
 
@@ -54,9 +57,9 @@ const minorOnHover = css`
 const mainOnHover = css`
   :hover {
     transform: scale(1.1);
+    z-index: 1;
     & ~ h4 {
-      margin-top: 2vh;
-      margin-bottom: 0;
+      bottom: -1vh;
     }
   }
 `;
@@ -66,7 +69,7 @@ export const StyledProjectMinor = styled.div<{ background: string; left: boolean
   width: 20%;
   padding-bottom: calc(9 / 16 * 20%);
   background: ${({ background }) => `url(${background})`};
-  filter: brightness(70%);
+  filter: brightness(40%);
   ${basicProject};
   ${svgInsideProject};
   ${minorOnHover};
@@ -83,13 +86,18 @@ export const StyledProjectMinor = styled.div<{ background: string; left: boolean
     background-color: ${({ theme }) => `${theme.white}33`};
     box-sizing: border-box;
     ${responsiveSvgInsideProject};
+    border-radius: 0;
+    :first-child {
+      border-top-left-radius: 10px;
+    }
+    :last-child {
+      border-top-right-radius: 10px;
+    }
   }
 `;
 
 export const StyledProjectMainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  position: relative;
   width: 50%;
   ${media768px} {
     width: 100%;
@@ -111,12 +119,24 @@ export const StyledProjectMain = styled.div<{ background: string }>`
 `;
 
 export const StyledProjectDescription = styled.h4`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: white;
-  margin-bottom: 2vh;
+  padding-left: 2vw;
+  padding-block: 2vh;
+  font-size: min(1.5vw, 16px);
+  background-color: ${({ theme }) => `${theme.black}88`};
+  border-radius: 10px;
   transition: 1s;
+  z-index: 15;
+  user-select: none;
+  pointer-events: none;
   ${media768px} {
     margin-bottom: 0;
     margin-top: 6vh;
+    font-size: max(2.5vw, 12px);
   }
 `;
 
@@ -145,5 +165,11 @@ export const StyledMainButtonWrapper = styled.div<{ left: boolean }>`
     background-color: ${({ theme }) => `${theme.white}33`};
     box-sizing: border-box;
     ${responsiveSvgInsideProject};
+    :first-child {
+      border-bottom-left-radius: 10px;
+    }
+    :last-child {
+      border-bottom-right-radius: 10px;
+    }
   }
 `;

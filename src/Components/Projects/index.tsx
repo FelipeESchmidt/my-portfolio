@@ -40,16 +40,22 @@ function Projects() {
       </S.StyledProjectMinor>
       <S.StyledProjectMainContainer>
         <S.StyledProjectMain background={showingProjects[main].main}>
-          <S.StyledMainButtonWrapper left={true} onClick={() => handleMainClick('link')}>
+          <S.StyledMainButtonWrapper
+            left={true}
+            onClick={() => handleMainClick('link')}
+            title="Visit the app"
+          >
             <AiOutlineEye />
           </S.StyledMainButtonWrapper>
-          <S.StyledMainButtonWrapper left={false} onClick={() => handleMainClick('repo')}>
+          <S.StyledMainButtonWrapper
+            left={false}
+            onClick={() => handleMainClick('repo')}
+            title="Visit the code"
+          >
             <AiOutlineGithub />
           </S.StyledMainButtonWrapper>
         </S.StyledProjectMain>
-        <S.StyledProjectDescription>
-          {showingProjects[main].description}
-        </S.StyledProjectDescription>
+        <S.StyledProjectDescription>{showingProjects[main].description}</S.StyledProjectDescription>
       </S.StyledProjectMainContainer>
       <S.StyledProjectMinor
         onClick={handleNext}
