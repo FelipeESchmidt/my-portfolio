@@ -67,7 +67,12 @@ export const lifetime: Array<LifeTimeProps> = [
   },
   {
     year: 2021,
-    title: 'Front-End Developer',
+    title: 'Front-End Junior Developer',
     description: `After my scholarship I received a proposal to work as a Front-End developer at Compass UOL. Stacks: React, Typescript, Jest, Git and Storybook.`,
+  },
+  {
+    year: 2023,
+    title: 'Front-End Mid-Level Developer',
+    description: `With one year working at Compass UOl, I've received a proposal to incorporate Terra Investimentos team, and became Terra's Front-End chapter leader as well.`,
   },
 ];

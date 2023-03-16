@@ -12,6 +12,8 @@ import php from './assets/php.png';
 import node from './assets/node.png';
 import html from './assets/html.png';
 import react from './assets/react.png';
+import jest from './assets/jest.png';
+import storybook from './assets/storybook.png';
 import javascript from './assets/javascript.png';
 import typescript from './assets/typescript.png';
 import cloud from './assets/cloud.svg';
@@ -156,6 +158,16 @@ function Example({ n }: any) {
               src={typescript}
               alt=""
               style={{ width: '6%', minWidth: '80px', marginLeft: '83%' }}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer offset={8.8} speed={1.2} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img src={jest} alt="" style={{ width: '5%', minWidth: '80px', marginLeft: '9%' }} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={8.8} speed={0.3} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img
+              src={storybook}
+              alt=""
+              style={{ width: '6%', minWidth: '80px', marginLeft: '85%' }}
             />
           </ParallaxLayer>
         </>
