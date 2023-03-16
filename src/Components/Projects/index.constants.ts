@@ -4,6 +4,8 @@ import library from './assets/library.png';
 import portfolio from './assets/portfolio.png';
 import teams_picker from './assets/teams_picker.png';
 import teams_picker_gif from './assets/teams_picker.gif';
+import teoric_machine_maker from './assets/teoric_machine_maker.png';
+import teoric_machine_maker_gif from './assets/teoric_machine_maker.gif';
 
 interface ProjectType {
   main: string;
@@ -22,6 +24,14 @@ export const projects: Array<ProjectType> = [
     main: certificates,
     minor: certificates,
     description: 'React app to show my certificates.',
+  },
+  {
+    name: 'teoric-machine-maker',
+    link: 'https://teoric-machine-maker.felipeschmidt.me',
+    repo: 'https://github.com/FelipeESchmidt/teoric-machine-maker',
+    main: teoric_machine_maker_gif,
+    minor: teoric_machine_maker,
+    description: 'React app that makes it possible to create, program and run universal machines.',
   },
   {
     name: 'portfolio',
