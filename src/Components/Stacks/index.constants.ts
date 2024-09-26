@@ -1,19 +1,19 @@
-interface StackProps {
+export interface StackProps {
   name: string;
-  goodAt: number;
+  goodAt: 'advanced' | 'intermediate' | 'beginner';
 }
 
 export const stacks: Array<StackProps> = [
-  { name: 'HTML', goodAt: 100 },
-  { name: 'Javascript', goodAt: 95 },
-  { name: 'React', goodAt: 90 },
-  { name: 'Typescript', goodAt: 85 },
-  { name: 'SASS', goodAt: 85 },
-  { name: 'Jest', goodAt: 70 },
-  { name: 'StoryBook', goodAt: 70 },
-  { name: 'React Native', goodAt: 70 },
-  { name: 'PHP', goodAt: 60 },
-  { name: 'NodeJS', goodAt: 60 },
-  { name: 'SQL', goodAt: 60 },
-  { name: 'Python', goodAt: 40 },
+  { name: 'React', goodAt: 'advanced' },
+  { name: 'Typescript', goodAt: 'advanced' },
+  { name: 'React Native', goodAt: 'advanced' },
+  { name: 'Javascript', goodAt: 'advanced' },
+  { name: 'Jest', goodAt: 'advanced' },
+  { name: 'StoryBook', goodAt: 'advanced' },
+  { name: 'HTML', goodAt: 'advanced' },
+  { name: 'SASS', goodAt: 'advanced' },
+  { name: 'PHP', goodAt: 'intermediate' },
+  { name: 'NodeJS', goodAt: 'intermediate' },
+  { name: 'SQL', goodAt: 'intermediate' },
+  { name: 'Python', goodAt: 'beginner' },
 ];
