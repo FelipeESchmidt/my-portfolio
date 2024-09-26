@@ -3,7 +3,7 @@ import { Spring } from 'react-spring';
 import Typical from 'react-typical';
 
 import * as S from './index.styles';
-import { socials, whatImI, whoImI, whoIWannaBe, whoIWannaBeTimes } from './index.constants';
+import { socials, whatIAm, whoIAm, whoIWannaBe, whoIWannaBeTimes } from './index.constants';
 
 function MainInfo() {
   const [renderDesc, SetRenderDesc] = React.useState(false);
@@ -14,7 +14,7 @@ function MainInfo() {
 
   return (
     <S.StyledContainer>
-      <Typical steps={[whoImI]} wrapper={S.StyledName} />
+      <Typical steps={[whoIAm]} wrapper={S.StyledName} />
       <Spring
         delay={3000}
         config={{ duration: 1000 }}
@@ -22,7 +22,7 @@ function MainInfo() {
         to={[{ opacity: 1, marginTop: '0' }]}
       >
         {(styles: any) => (
-          <S.StyledDescription style={{ ...styles }}>{whatImI}</S.StyledDescription>
+          <S.StyledDescription style={{ ...styles }}>{whatIAm}</S.StyledDescription>
         )}
       </Spring>
 
