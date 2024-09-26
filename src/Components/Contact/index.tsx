@@ -44,6 +44,11 @@ function Contact() {
       <ParallaxLayer offset={9.2} speed={3.5} style={{ pointerEvents: 'none' }}>
         <S.StyledBigContainer>
           <Form onSubmit={(info: any) => console.log(info)} />
+          <S.StyledOverlayDisabled>
+            <div>
+              <span>Available in future</span>
+            </div>
+          </S.StyledOverlayDisabled>
         </S.StyledBigContainer>
       </ParallaxLayer>
     </>

@@ -12,6 +12,7 @@ export const StyledContainer = styled.form`
   gap: 25px;
   padding: 40px 20px;
   align-items: center;
+  filter: blur(2px);
 `;
 
 export const InputContainer = styled.div`

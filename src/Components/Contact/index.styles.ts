@@ -37,6 +37,7 @@ export const StyledMiniContainer = styled.div<{ left: boolean }>`
 `;
 
 export const StyledBigContainer = styled.div`
+  position: relative;
   width: 44%;
   height: 600px;
   margin-left: 28%;
@@ -49,6 +50,31 @@ export const StyledBigContainer = styled.div`
   ${media768px} {
     width: 90%;
     margin-left: 5%;
+  }
+`;
+
+export const StyledOverlayDisabled = styled.div`
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: not-allowed;
+  border-radius: 40px;
+
+  div {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    span {
+      font-size: 2em;
+      color: ${({ theme }) => theme.white};
+    }
   }
 `;
 
