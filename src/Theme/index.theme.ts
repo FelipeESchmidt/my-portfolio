@@ -7,4 +7,7 @@ export const theme = {
   disabled: '#9e9e9e',
   info: '#01579b',
   red: '#c62828',
+  advanced: '#b71c1c',
+  intermediate: '#e65100',
+  beginner: '#0288d1',
 };

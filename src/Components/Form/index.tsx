@@ -42,6 +42,7 @@ function Form({ onSubmit }: any) {
           </S.Label>
           <input.component
             {...input.props}
+            disabled={true}
             value={values[input.label]}
             onFocus={() => handleInputFocus(input.label)}
             onBlur={(e: any) => handleInputBlur(input.label, e.target.value)}

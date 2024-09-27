@@ -18,7 +18,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <ParallaxContext.Provider value={{ parallax }}>
-        <Parallax ref={parallax} pages={isResponsive ? 9 : 10}>
+        <Parallax ref={parallax} pages={isResponsive ? 10 : 11}>
           <ParallaxLayer offset={0} speed={0.2}>
             <Home />
           </ParallaxLayer>
@@ -28,7 +28,7 @@ function App() {
           <ParallaxLayer offset={3.5} speed={0.2}>
             <Projects />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: 5, end: 8.5 }} style={{ height: '200px' }}>
+          <ParallaxLayer sticky={{ start: 5, end: 9.5 }} style={{ height: '200px' }}>
             <LifetimeTop offsetStartBase={5.2} />
           </ParallaxLayer>
           <Lifetime offsetStartBase={5.2} />

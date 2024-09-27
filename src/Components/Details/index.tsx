@@ -3,7 +3,9 @@ import { ParallaxLayer } from '@react-spring/parallax';
 import ParallaxContext from '../../Contexts/ParallaxContext';
 import { useResponsive } from '../../Hooks/useResponsive';
 
+import android from './assets/android.png';
 import graduated from './assets/graduated.png';
+import diploma from './assets/diploma.webp';
 import eletric from './assets/eletric.png';
 import light from './assets/light.png';
 import baby from './assets/baby.png';
@@ -11,6 +13,7 @@ import c from './assets/c.png';
 import php from './assets/php.png';
 import node from './assets/node.png';
 import html from './assets/html.png';
+import ios from './assets/ios.png';
 import react from './assets/react.png';
 import jest from './assets/jest.png';
 import storybook from './assets/storybook.png';
@@ -21,7 +24,7 @@ import stars from './assets/stars.svg';
 
 import { ArrowUp } from './index.styles';
 
-function Example({ n }: any) {
+function Details({ n }: any) {
   const { parallax } = useContext(ParallaxContext);
   const isResponsive = useResponsive();
 
@@ -48,7 +51,7 @@ function Example({ n }: any) {
       <ParallaxLayer
         offset={5}
         speed={0}
-        factor={4}
+        factor={5}
         style={{
           backgroundImage: `url(${stars})`,
           backgroundSize: 'cover',
@@ -170,14 +173,31 @@ function Example({ n }: any) {
               style={{ width: '6%', minWidth: '80px', marginLeft: '85%' }}
             />
           </ParallaxLayer>
+          <ParallaxLayer offset={9.8} speed={1.2} style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <img
+              src={android}
+              alt=""
+              style={{ width: '8%', minWidth: '120px', marginLeft: '9%' }}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer offset={9.4} speed={0.7} style={{ opacity: 0.8, pointerEvents: 'none' }}>
+            <img src={ios} alt="" style={{ width: '5%', minWidth: '80px', marginLeft: '81%' }} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={9.2} speed={1.8} style={{ opacity: 0.7, pointerEvents: 'none' }}>
+            <img
+              src={diploma}
+              alt=""
+              style={{ width: '8%', minWidth: '120px', marginLeft: '9%' }}
+            />
+          </ParallaxLayer>
         </>
       )}
 
-      <ParallaxLayer offset={isResponsive ? 8.92 : 9.92} speed={-4}>
+      <ParallaxLayer offset={isResponsive ? 9.92 : 10.92} speed={-4}>
         <ArrowUp onClick={() => parallax?.current.scrollTo(0)} />
       </ParallaxLayer>
     </>
   );
 }
 
-export default Example;
+export default Details;

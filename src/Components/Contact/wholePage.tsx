@@ -29,6 +29,11 @@ function WholeContactPage() {
 
         <S.StyledBigContainer>
           <Form onSubmit={(info: any) => console.log(info)} />
+          <S.StyledOverlayDisabled>
+            <div>
+              <span>Available in future</span>
+            </div>
+          </S.StyledOverlayDisabled>
         </S.StyledBigContainer>
 
         <S.StyledMiniContainer left={false}>

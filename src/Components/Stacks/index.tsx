@@ -1,21 +1,27 @@
 import React from 'react';
-import { stacks } from './index.constants';
+import { StackProps, stacks } from './index.constants';
 
 import * as S from './index.styles';
 
-function Stacks() {
+const Stacks: React.FC = () => {
+  const getPercentage = (goodAt: StackProps['goodAt']) => {
+    if (goodAt === 'advanced') return 100;
+    if (goodAt === 'intermediate') return 60;
+    return 30;
+  };
+
   return (
     <S.StyledStacks>
       {stacks.map((stack) => (
-        <S.StyledStack key={stack.name}>
-          <S.StyledStackName>{`${stack.name} (${stack.goodAt})%`}</S.StyledStackName>
-          <S.StyledGoodAt number={stack.goodAt}>
+        <S.StyledStack key={stack.name} goodAt={stack.goodAt}>
+          <S.StyledStackName>{stack.name}</S.StyledStackName>
+          <S.StyledGoodAt percentage={getPercentage(stack.goodAt)} goodAt={stack.goodAt}>
             <span />
           </S.StyledGoodAt>
         </S.StyledStack>
       ))}
     </S.StyledStacks>
   );
-}
+};
 
 export default Stacks;

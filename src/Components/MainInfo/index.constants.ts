@@ -9,13 +9,13 @@ interface Social {
   icon: IconType;
 }
 
-export const whoImI: string = "Sup, I'm Felipe Schmidt";
-export const whatImI: string = "I'm a Brazilian Front-end Developer";
+export const whoIAm: string = "Sup, I'm Felipe Schmidt";
+export const whatIAm: string = "I'm a Brazilian Front-end Developer and a Computer Scientist";
 export const whoIWannaBe: Array<string> = [
+  'Graduated in Computer Scientist',
   'Studying to become a FullStack Developer',
   'Studying to become a Better Person',
   'Studying to become a Better Professional',
-  'Studying to become a Computer Scientist',
 ];
 export const whoIWannaBeTimes: Array<number> = [1500, 1500, 1500, 5000];
 
