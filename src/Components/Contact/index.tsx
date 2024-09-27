@@ -15,7 +15,7 @@ function Contact() {
   return (
     <>
       <ParallaxLayer
-        offset={isResponsive ? 9.05 : 9.3}
+        offset={isResponsive ? 10.05 : 10.3}
         speed={-3.5}
         style={{ pointerEvents: 'none' }}
       >
@@ -31,7 +31,7 @@ function Contact() {
         </S.StyledMiniContainer>
       </ParallaxLayer>
       <ParallaxLayer
-        offset={isResponsive ? 9.05 : 9.3}
+        offset={isResponsive ? 10.05 : 10.3}
         speed={-3.5}
         style={{ pointerEvents: 'none' }}
       >
@@ -41,7 +41,7 @@ function Contact() {
           </S.ImageWrapper>
         </S.StyledMiniContainer>
       </ParallaxLayer>
-      <ParallaxLayer offset={9.2} speed={3.5} style={{ pointerEvents: 'none' }}>
+      <ParallaxLayer offset={10.2} speed={3.5} style={{ pointerEvents: 'none' }}>
         <S.StyledBigContainer>
           <Form onSubmit={(info: any) => console.log(info)} />
           <S.StyledOverlayDisabled>
