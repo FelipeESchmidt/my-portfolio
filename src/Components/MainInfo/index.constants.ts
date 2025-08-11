@@ -1,6 +1,5 @@
 import { IconType } from 'react-icons';
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs';
-import { FaSteam } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 
 interface Social {
@@ -12,7 +11,7 @@ interface Social {
 export const whoIAm: string = "Sup, I'm Felipe Schmidt";
 export const whatIAm: string = "I'm a Brazilian Front-end Developer and a Computer Scientist";
 export const whoIWannaBe: Array<string> = [
-  'Graduated in Computer Scientist',
+  'Graduated in Computer Science',
   'Studying to become a FullStack Developer',
   'Studying to become a Better Person',
   'Studying to become a Better Professional',
@@ -30,11 +29,6 @@ export const socials: Array<Social> = [
     name: 'instagram',
     href: 'https://www.instagram.com/feschmidt_/',
     icon: BsInstagram,
-  },
-  {
-    name: 'steam',
-    href: 'https://steamcommunity.com/id/TheJodes/',
-    icon: FaSteam,
   },
   {
     name: 'email',

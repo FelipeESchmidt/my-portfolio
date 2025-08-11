@@ -7,7 +7,7 @@ import Form from '../Form';
 
 import * as S from './index.styles';
 
-import me from './assets/me.png';
+import me from './assets/me.jpg';
 import { useResponsive } from '../../Hooks/useResponsive';
 
 function Contact() {
