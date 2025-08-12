@@ -4,6 +4,8 @@ import library from './assets/library.png';
 import portfolio from './assets/portfolio.png';
 import teams_picker from './assets/teams_picker.png';
 import teams_picker_gif from './assets/teams_picker.gif';
+import ctf from './assets/ctf.png';
+import ctf_gif from './assets/ctf.gif';
 
 interface ProjectType {
   main: string;
@@ -16,14 +18,6 @@ interface ProjectType {
 
 export const projects: Array<ProjectType> = [
   {
-    name: 'certificates',
-    link: 'http://certificates.felipeschmidt.me',
-    repo: 'https://github.com/FelipeESchmidt/React-CertificatesPage-Typescript',
-    main: certificates,
-    minor: certificates,
-    description: 'React app to show my certificates.',
-  },
-  {
     name: 'portfolio',
     link: 'https://felipeschmidt.me',
     repo: 'https://github.com/FelipeESchmidt/my-portfolio',
@@ -32,12 +26,28 @@ export const projects: Array<ProjectType> = [
     description: 'React parallax app to show my portfolio. (This one)',
   },
   {
+    name: 'capstone project',
+    link: 'https://computing-theory-forge.felipeschmidt.me/',
+    repo: 'https://github.com/FelipeESchmidt/computing-theory-forge',
+    main: ctf_gif,
+    minor: ctf,
+    description: 'Capstone project to help students understand computing theory concepts.',
+  },
+  {
     name: 'blog',
     link: 'http://blog.felipeschmidt.me',
     repo: 'https://github.com/FelipeESchmidt/React--Sistema--Blog',
     main: blog,
     minor: blog,
     description: 'React app to create post and commentaries on them.',
+  },
+  {
+    name: 'certificates',
+    link: 'http://certificates.felipeschmidt.me',
+    repo: 'https://github.com/FelipeESchmidt/React-CertificatesPage-Typescript',
+    main: certificates,
+    minor: certificates,
+    description: 'React app to show my certificates.',
   },
   {
     name: 'library',
